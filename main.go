@@ -6,6 +6,7 @@ func main() {
 	conferenceName := "Go Conference"
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50
+	bookings := []string{}
 
 	fmt.Printf("conferenceTickets is %T, remainTickets is %T, conferenceName is %T\n", conferenceTickets, remainingTickets, conferenceName)
 
@@ -15,7 +16,6 @@ func main() {
 
 	//var bookings = [50]string{}
 	//variables & types
-	var bookings [50]string
 	//bookings[1] = "Anna Lee"
 
 	var firstName string
@@ -37,16 +37,19 @@ func main() {
 
 	//keeping track of ticket sales
 	remainingTickets = remainingTickets - userTickets
-	bookings[0] = firstName + " " + lastName
-
-	fmt.Printf("The whole array: %v\n", bookings)
-	fmt.Printf("The first value: %v\n", bookings[0])
-	fmt.Printf("Array type: %T\n", bookings)
-	fmt.Printf("Array length: %v\n", len(bookings))
+	bookings = append(bookings, firstName+" "+lastName)
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
+	fmt.Printf("These are all our bookings: %v\n", bookings)
 }
 
 //arrays & slices in Go
+
+//Slice an abstraction of an ARRAY
+//Slices are more flexible - variable-length or get a sub-array of its own
+//Slices are also index-based and have a size, but is resized when needed.
+
+//slices 1:07:18
+//https://www.youtube.com/watch?v=yyUHQIec83I&t=3078s
